@@ -4,6 +4,12 @@ GREN='\033[0;32m'
 RED='\033[0;31m'
 CLEAR='\033[0m'
 
+if ! command -v bc &> /dev/null
+then
+    echo "please install bc"
+    exit
+fi
+
 info_OS_name() {
 cat /etc/*-release | grep DISTRIB_DESCRIPTION= | sed "s/DISTRIB_DESCRIPTION=//g" | sed "s/\"//g"
 }

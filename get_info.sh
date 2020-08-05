@@ -11,7 +11,7 @@ then
 fi
 
 info_OS_name() {
-cat /etc/*-release | grep DISTRIB_DESCRIPTION= | sed "s/DISTRIB_DESCRIPTION=//g" | sed "s/\"//g"
+hostnamectl | grep "  Operating System: " | sed "s/  Operating System: //g" | sed "s/\"//g"
 }
 info_cpu_percen() {
 # mpstat | awk '$12 ~ /[0-9.]+/ { print 100 - $12"%" }'
